@@ -9,8 +9,8 @@ void setup() {
   int presentVolt;
   int stopButtonState;
   int resetButtonState;
-  boolean operationState = false; // 默认为false，即自动模式
-  boolean wateringState = false; // 默认为false，即没有浇水
+  bool operationState = false; // 默认为false，即自动模式
+  bool wateringState = false; // 默认为false，即没有浇水
   int humidPin = 0; // pin口待定
   int valvePin = 1; // pin口待定
   int stopButtonPin = 2; // pin口待定
