@@ -27,4 +27,4 @@
 
 ## FlowChart
 ![](Blank%20diagram.png)
-改成rage
+改成range
