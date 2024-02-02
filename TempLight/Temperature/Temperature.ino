@@ -39,7 +39,7 @@ void autoMaintainTemperature(){
   if (currentTemperature<minTemperature)
   {
     toggleHeating(1);
-  }else if (currentTemperature>=minTemperature & currentTemperature=<maxTemperature)
+  }else if (currentTemperature>=minTemperature & currentTemperature <= maxTemperature)
   {
     toggleFan(0);
     toggleHeating(0);

@@ -1,10 +1,10 @@
 int minIntensity;
 int currentIntensity;
 
-int lightButtonPin;//记录照明开关输入接口
-int inputIntensityPin;//记录光强输入接口
+int lightButtonPin;
+int inputIntensityPin;
 
-int lightControlPin;//记录照明输出接口  
+int lightControlPin;
 void setup() {
   // put your setup code here, to run once:
 
@@ -32,16 +32,6 @@ if (state)
 }
 }
 
-//System
-void intensitySystem(){
-  if (!IntensityManualCheck())
-  {
-    autoMaintainTemperature();
-  }else{
-    manualControlTemperature();
-  } 
-}
-
 //subSystem:auto
 void autoMaintainIntensity(){
   currentIntensity= getIntensity();
@@ -62,6 +52,17 @@ void manualControlIntensity(){
     toggleLight(1);
   }
 }
+//System
+void intensitySystem(){
+  if (!IntensityManualCheck())
+  {
+    autoMaintainIntensity();
+  }else{
+    manualControlIntensity();
+  } 
+}
+
+
 
 bool IntensityManualCheck() {
 
