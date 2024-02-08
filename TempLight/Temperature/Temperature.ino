@@ -14,12 +14,20 @@ int heaterControlPin;//记录加热垫输出接口
 
 void setup() {
   // put your setup code here, to run once:
+  Serial.begin(9600);
+heaterControlPin=2;
+inputTempPin=A5;
+pinMode(inputTempPin,INPUT);
+pinMode(heaterControlPin,OUTPUT);
 
 }
 
 void loop() {
+  currentTemperature=analogRead(inputTempPin);
+  Serial.println(currentTemperature);
+  delay(1000);
   // put your main code here, to run repeatedly:
-  temperatureSystem();
+  //temperatureSystem();
 }
 
 //System
@@ -77,9 +85,9 @@ return  temp;
 void toggleHeating(bool state){
 if (state)
 {
-  digitalWrite(heaterControlPin, HIGH);
-}else{
   digitalWrite(heaterControlPin, LOW);
+}else{
+  digitalWrite(heaterControlPin, HIGH);
 }
 
 }
