@@ -40,7 +40,7 @@ void temperatureSystem(){
   } 
 }
 
-//subSystem:auto
+//subSystem:auto 低电平触发
 void autoMaintainTemperature(){
 
   currentTemperature= getTemperature();
@@ -113,5 +113,8 @@ bool tempManualCheck() {
      return false;
   }
 }
+
+//button check
+//heating(with a indicator) and fan
 
 

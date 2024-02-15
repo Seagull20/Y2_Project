@@ -6,7 +6,7 @@ int indecatorPin;
 
 int lightControlPin;
 
-bool systemState;
+bool systemState;//auto/manual
 bool lightState;
 
 void setup() {
@@ -16,7 +16,7 @@ lightButtonPin=1;
 lightControlPin=2;
 inputIntensityPin=A4;
 indecatorPin=3;
-pinMode(indecatorPin,OUTPUT);
+pinMode(indicatorPin,OUTPUT);
 pinMode(inputIntensityPin,INPUT);
 pinMode(lightControlPin,OUTPUT);
 pinMode(lightButtonPin,INPUT);
@@ -24,7 +24,7 @@ Serial.begin(9600);
 }
 
 void loop() {
-  currentIntensity=analogRead(inputIntensityPin);
+  //currentIntensity=analogRead(inputIntensityPin);
   Serial.println(currentIntensity);
   // put your main code here, to run repeatedly:
   intensitySystem();
@@ -78,10 +78,10 @@ void intensitySystem(){
   if (systemState)
   {
     autoMaintainIntensity();
-    digitalWrite(indecatorPin,LOW);
+    digitalWrite(indicatorPin,LOW);
   }else{
     manualControlIntensity();
-    digitalWrite(indecatorPin,HIGH);
+    digitalWrite(indicatorPin,HIGH);
   } 
 }
 
